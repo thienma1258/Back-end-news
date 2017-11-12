@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EED.Common\EED.Common.csproj" />
+    <ProjectReference Include="..\EED.DAL\EED.DAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Contract\" />
+    <Folder Include="Implementations\" />
+  </ItemGroup>
+
+</Project>
