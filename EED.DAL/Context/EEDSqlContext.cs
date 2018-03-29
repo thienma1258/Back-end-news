@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EED.DAL.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace EED.DAL.Context
 {
@@ -11,16 +12,19 @@ namespace EED.DAL.Context
         public EEDSqlContext()
         {
         }
-
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<TypeAricles> Type { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
+        {   
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Data Source=163.22.17.198;Initial Catalog=LoveTrip;Integrated Security=False;User ID=LoveTripDatabaseManager;Password=abc@123;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=testEFdotnet;Integrated Security=True");
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            builder.Entity<Article>().ToTable("Articles");
+            builder.Entity<TypeAricles>().ToTable("TypeArticles");
         }
     }
 }

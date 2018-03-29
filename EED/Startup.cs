@@ -35,7 +35,7 @@ namespace EED
 
             services.AddSingleton(_config);
 
-            //services.AddDbContext<EEDSqlContext>(options => options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<EEDSqlContext>(options => options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
 
             services.AddMvc();
         }
